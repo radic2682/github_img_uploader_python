@@ -125,7 +125,7 @@ while True:
             
             print("*****************************************")
             print("The image has been successfully uploaded.")
-            pyperclip.copy(f"[이미지](https://raw.githubusercontent.com/radic2682/blog_images_repo/main/uploads/{contents[selectedFolder_num]['name']}/{imageName}.png)")
+            pyperclip.copy(f"![이미지](https://raw.githubusercontent.com/radic2682/blog_images_repo/main/uploads/{contents[selectedFolder_num]['name']}/{imageName}.png)")
             print("(Copy to clipboard.)\n")
             print("*****************************************")
         else:
@@ -152,7 +152,7 @@ while True:
             response = requests.put(api_url, headers=github_headers, json=data)
             
             if response.status_code == 201:
-                pyperclip.copy(f"[이미지](https://raw.githubusercontent.com/radic2682/blog_images_repo/main/uploads/{contents[selectedFolder_num]['name']}/{imageName}.{extension})") 
+                pyperclip.copy(f"![이미지](https://raw.githubusercontent.com/radic2682/blog_images_repo/main/uploads/{contents[selectedFolder_num]['name']}/{imageName}.{extension})") 
                 print("*****************************************")
                 print("The image has been successfully uploaded.")
                 print(f"https://raw.githubusercontent.com/radic2682/blog_images_repo/main/uploads/{contents[selectedFolder_num]['name']}/{imageName}.{extension}")
