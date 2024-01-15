@@ -106,6 +106,10 @@ while True:
         # 스크린샷 폴더에 사진 저장 후 불러오기  (스크린샷 폴더: C:\Users\{user_name}\Pictures\Screenshots)
         save_name = f"{imageName}.png"
         Screenshot_folder = os.path.join("C:\\Users", os.getlogin(), "Pictures/Screenshots")
+
+        if not os.path.exists(Screenshot_folder):
+            os.makedirs(Screenshot_folder)
+
         img_path = os.path.join(Screenshot_folder, save_name)
         clipboard_data.save(img_path)
         
