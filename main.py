@@ -140,6 +140,9 @@ while True:
 
     elif clipboard_data and isinstance(clipboard_data, list):
 
+        print("*****************************************")
+        print("The image has been successfully uploaded.")
+
         for data in clipboard_data:
             with open(data, "rb") as file:
                 image = file.read()
@@ -157,13 +160,12 @@ while True:
             
             if response.status_code == 201:
                 pyperclip.copy(f"![이미지](https://raw.githubusercontent.com/radic2682/blog_images_repo/main/uploads/{contents[selectedFolder_num]['name']}/{imageName}.{extension})") 
-                print("*****************************************")
-                print("The image has been successfully uploaded.")
-                print(f"https://raw.githubusercontent.com/radic2682/blog_images_repo/main/uploads/{contents[selectedFolder_num]['name']}/{imageName}.{extension}")
-                print("(Copy to clipboard.)\n")
-                print("*****************************************")
+                print(f"![이미지](https://raw.githubusercontent.com/radic2682/blog_images_repo/main/uploads/{contents[selectedFolder_num]['name']}/{imageName}.{extension})")
             else:
                 print(f"API request failed: {response.status_code}")
+
+        print("(Copy to clipboard.)\n")
+        print("*****************************************")
 
 
     else:
